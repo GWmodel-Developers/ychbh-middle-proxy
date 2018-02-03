@@ -36,9 +36,10 @@ app.use("/huangbaihe", function (req, res) {
     body: data
   }, function (err, response, body) {
     if (err) {
-      res.send(`path:${path}`)
+      res.send(`path:${path}`);
     } else {
-      res.json(body)
+      res.setHeader("Access-Control-Allow-Origin", "*");
+      res.json(body);
     }
   })
 })
